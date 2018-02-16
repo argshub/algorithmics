@@ -12,6 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>sorting/bubble_sort.cpp</itemPath>
       <itemPath>sorting/insertion_sort.cpp</itemPath>
       <itemPath>sorting/selection_sort.cpp</itemPath>
     </logicalFolder>
@@ -37,6 +38,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="sorting/bubble_sort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sorting/insertion_sort.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sorting/selection_sort.cpp" ex="false" tool="1" flavor2="0">
@@ -62,6 +65,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="sorting/bubble_sort.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sorting/insertion_sort.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sorting/selection_sort.cpp" ex="false" tool="1" flavor2="0">

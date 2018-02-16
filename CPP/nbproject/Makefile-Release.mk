@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/sorting/bubble_sort.o \
 	${OBJECTDIR}/sorting/insertion_sort.o \
 	${OBJECTDIR}/sorting/selection_sort.o
 
@@ -62,6 +63,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpp.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpp ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/sorting/bubble_sort.o: sorting/bubble_sort.cpp
+	${MKDIR} -p ${OBJECTDIR}/sorting
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sorting/bubble_sort.o sorting/bubble_sort.cpp
 
 ${OBJECTDIR}/sorting/insertion_sort.o: sorting/insertion_sort.cpp
 	${MKDIR} -p ${OBJECTDIR}/sorting
