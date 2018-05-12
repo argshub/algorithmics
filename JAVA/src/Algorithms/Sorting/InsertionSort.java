@@ -1,30 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Sorting;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 7/31/2010.
  */
 public class InsertionSort {
-    
-    public static void sort(int arrayOfData[]) {
-        int leftIndex = 0, currentElement = 0;
-        for(int i = 1; i < arrayOfData.length; i++) {
-            currentElement = arrayOfData[i]; leftIndex = i - 1;
-            while(leftIndex >= 0 && currentElement < arrayOfData[leftIndex]) arrayOfData[leftIndex+1] = arrayOfData[leftIndex--];
-            arrayOfData[++leftIndex] = currentElement;
+
+
+    public static int[] sort(int data[]) {
+        int currentValue, j;
+        for(int i = 1; i < data.length; i++) {
+            currentValue = data[i];
+            j = i - 1;
+            while (j >= 0 && currentValue < data[j]) {
+                data[j+1] = data[j];
+                j--;
+            }
+            data[j+1] = currentValue;
         }
+
+        return data;
     }
-    
+
+
     public static void main(String arg[]) {
-        int integerData[] = {5, 2, 9, 1, 8, 3, 7, 4, 6};
-        InsertionSort.sort(integerData);
-        
-        for (int i = 0; i < integerData.length; i++) System.out.printf("%d\t", integerData[i]);
+        int data[] = {10, 8, 7, 5, 2, 1, 6, 3, 5, 1};
+        data = sort(data);
+
+        for (int i = 0; i < data.length; i++) System.out.printf("%d\t", data[i]);
     }
-    
 }

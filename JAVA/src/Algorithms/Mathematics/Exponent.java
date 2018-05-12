@@ -3,20 +3,17 @@ package Algorithms.Mathematics;
 /**
  * Created by xenonus on 8/1/2010.
  */
-public class BinaryExponentation {
+public class Exponent {
 
     public static int exponent(int number, int power) {
         if(power <= 1) return number;
-        else if((power & 1) != 0) return number * exponent(number * number, power / 2);
-        else return exponent(number * number, power / 2);
+        else return number * exponent(number, power - 1);
     }
-
-    public static int exponentIterative(int number, int power) {
-        int result = 1;
+    private static int exponentIterative(int number, int power) {
+        int result  = 1;
         while (power > 0) {
-            if((power & 1) != 0) result *= number;
-            number *= number;
-            power /= 2;
+            result *= number;
+            power--;
         }
         return result;
     }
@@ -31,4 +28,6 @@ public class BinaryExponentation {
         System.out.println(exponentIterative(10, 2));
         System.out.println(exponentIterative(10, 3));
     }
+
+
 }

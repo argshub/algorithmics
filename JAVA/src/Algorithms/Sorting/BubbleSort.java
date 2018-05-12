@@ -1,34 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Sorting;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 7/31/2010.
  */
 public class BubbleSort {
-    
-    public static void sort(int arrayOfData[]) {
-        for(int i = 0; i  < arrayOfData.length; i++)
-            for(int j = 0; j < arrayOfData.length - i - 1; j++)
-                if(arrayOfData[j] > arrayOfData[j+1]) {
-                    int swap = arrayOfData[j];
-                    arrayOfData[j] = arrayOfData[j+1];
-                    arrayOfData[j+1] = swap;
+
+    public static int[] sort(int data[]) {
+        int temp;
+        for (int i = 0; i < data.length; i++) {
+            for(int j = 0; j < (data.length - i - 1); j++) {
+                if(data[j] > data[j+1]) {
+                    temp = data[j+1];
+                    data[j+1] = data[j];
+                    data[j] = temp;
                 }
-                
+            }
+        }
+        return data;
     }
-    
+
     public static void main(String arg[]) {
-        
-        int arrayOfData[] = {5, 2, 9, 1, 8, 5, 7, 4, 6};
-        BubbleSort.sort(arrayOfData);
-        
-        for(int x : arrayOfData) System.out.printf("%d\t", x);
-        
+        int data[] = {10, 8, 7, 5, 2, 1, 6, 3, 5, 1};
+        data = sort(data);
+
+        for (int i = 0; i < data.length; i++) System.out.printf("%d\t", data[i]);
     }
-    
 }

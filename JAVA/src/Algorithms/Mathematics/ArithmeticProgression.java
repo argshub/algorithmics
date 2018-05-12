@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Mathematics;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 8/1/2010.
  */
 public class ArithmeticProgression {
-    
-    public static int progression(int first, int difference, int position) {
+
+    public static int seriesValue(int first, int position, int difference) {
         return first + (position - 1) * difference;
     }
-    
-    public static int sumOfArithmeticProgression(int first, int difference, int total) {
-        return total * (progression(first, difference, 1) + progression(first, difference, total)) / 2;
+
+    public static int sumOfSeries(int first, int total, int difference) {
+        return total * (seriesValue(first, 1, difference) + seriesValue(first, total, difference)) / 2;
     }
-    
+
     public static void main(String arg[]) {
-        System.out.println(progression(2, 2, 5));
-        System.out.println(sumOfArithmeticProgression(2, 2, 5));
+        System.out.println(seriesValue(2, 4, 3));
+        System.out.println(sumOfSeries(2, 4, 3));
     }
 }

@@ -1,38 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Sorting;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 7/31/2010.
  */
 public class SelectionSort {
-    
-    
-    public static int[] sort(int arrayOfData[]) {
-        for(int i = 0; i < arrayOfData.length; i++) {
-            int minimumIndex = i;
-            for(int j = i + 1; j < arrayOfData.length; j++) {
-                if(arrayOfData[j] < arrayOfData[minimumIndex]) minimumIndex = j;
+
+    public static int[] sort(int data[]) {
+        int minimumAddress, temp;
+        for (int i = 0; i < data.length; i++) {
+            minimumAddress = i;
+            for (int j = i + 1; j  < data.length; j++) {
+                if(data[j] < data[minimumAddress]) minimumAddress = j;
             }
-            int swap = arrayOfData[i];
-            arrayOfData[i] = arrayOfData[minimumIndex];
-            arrayOfData[minimumIndex] = swap;
+            temp = data[minimumAddress];
+            data[minimumAddress] = data[i];
+            data[i] = temp;
         }
-        
-        return arrayOfData;
-    }
-    
-    
-    public static void main(String arg[]) {
-        int integerData[] = {5, 2, 9, 1, 8, 3, 7, 4, 6};
-        SelectionSort.sort(integerData);
-        
-        for (int i = 0; i < integerData.length; i++) System.out.printf("%d\t", integerData[i]);
+
+        return data;
     }
 
- 
+    public static void main(String arg[]) {
+        int data[] = {10, 8, 7, 5, 2, 1, 6, 3, 5, 1};
+        data = sort(data);
+
+        for (int i = 0; i < data.length; i++) System.out.printf("%d\t", data[i]);
+    }
 }

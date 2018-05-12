@@ -1,25 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Mathematics;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 8/1/2010.
  */
 public class GeometricProgression {
-    
-    public static int progression(int first, int ratio, int position) {
+
+    public static int seriesValue(int first, int ratio, int position) {
         return first * BinaryExponentation.exponent(ratio, position - 1);
     }
-    public static int sumOfProgression(int first, int ratio, int total) {
-        return first * (1 - BinaryExponentation.exponent(ratio, total)) / (1 - ratio);
+
+    public static int sumOfSeries(int first, int ratio, int total) {
+        return first *  (1 - BinaryExponentation.exponent(ratio, total)) / (1 - ratio);
     }
-    
+
     public static void main(String arg[]) {
-        System.out.println(progression(2, 2, 5));
-        System.out.println(sumOfProgression(2, 2, 5));
+        System.out.println(seriesValue(2, 3, 5));
+        System.out.println(sumOfSeries(2, 3, 5));
     }
 }
