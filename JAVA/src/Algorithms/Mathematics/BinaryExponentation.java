@@ -6,7 +6,7 @@ package Algorithms.Mathematics;
 public class BinaryExponentation {
 
     public static int exponent(int number, int power) {
-        if(power <= 1) return number;
+        if(power == 0) return 1;
         else if((power & 1) != 0) return number * exponent(number * number, power / 2);
         else return exponent(number * number, power / 2);
     }

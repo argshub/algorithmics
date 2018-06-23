@@ -46,6 +46,9 @@ public class Queue<T> implements Iterable {
         return this.front.element;
     }
 
+    public boolean empty() {
+        return this.front == null;
+    }
 
     public Iterator iterator() {
         return new QueueIterator(this.front);

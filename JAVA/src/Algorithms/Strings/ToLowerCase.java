@@ -1,27 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Algorithms.Strings;
 
 /**
- *
- * @author argshub
+ * Created by xenonus on 8/9/2010.
  */
-public class ToLowerCase {
-    
-    
-    public static String toLowerCase(String data) {
-        char characters[] = data.toCharArray();
-        for(int i = 0; i < characters.length; i++) {
-            int characterCode = (int) characters[i];
-            if(characterCode >= 65 && characterCode <= 90) characters[i] = (char) (characterCode + 32);
+public class toLowerCase {
+
+
+
+    public static String toLower(String message) {
+        char character[] = message.toCharArray();
+        for (int i = 0; i < character.length; i++) {
+            int value = (int) character[i];
+            if(value >= 65 && value <= 90) value += 32;
+            character[i] = (char) value;
         }
-        return data.valueOf(characters);
+        return new String(character);
     }
-    
+
     public static void main(String arg[]) {
-        System.out.println(toLowerCase("ABCDEiiFGHIJKLMNOPQRSTWXYZ"));
+        System.out.println(toLower("Hello World: SHAZZAD"));
     }
 }
