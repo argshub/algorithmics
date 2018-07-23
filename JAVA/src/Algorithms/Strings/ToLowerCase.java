@@ -3,7 +3,7 @@ package Algorithms.Strings;
 /**
  * Created by xenonus on 8/9/2010.
  */
-public class toLowerCase {
+public class ToLowerCase {
 
 
 
